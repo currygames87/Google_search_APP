@@ -27,7 +27,7 @@ class GoogleSearchApp(QMainWindow):
         title_label.setAlignment(Qt.AlignCenter)
         layout.addWidget(title_label)
 
-        # 關鍵字輸入框
+        # 輸入關鍵字
         keyword_label = QLabel("請輸入想搜尋的關鍵字：")
         keyword_label.setStyleSheet("font-size: 25px;")
         layout.addWidget(keyword_label)
@@ -36,25 +36,25 @@ class GoogleSearchApp(QMainWindow):
         self.keyword_input.setStyleSheet("font-size:25px;")
         layout.addWidget(self.keyword_input)
 
-        # 文字搜索按鈕
+        # 文字搜尋
         text_search_button = QPushButton("搜尋文字")
         text_search_button.setStyleSheet("font-size: 20px; background-color: #FF00FF; color: white;")
         text_search_button.clicked.connect(self.search_text)
         layout.addWidget(text_search_button)
 
-        # 圖片搜索按鈕
+        # 圖片搜尋
         image_search_button = QPushButton("搜尋圖片")
         image_search_button.setStyleSheet("font-size: 20px; background-color: #FF00FF; color: white;")
         image_search_button.clicked.connect(self.search_image)
         layout.addWidget(image_search_button)
 
-        # 搜索結果
+        # 搜尋結果
         self.result_text = QTextBrowser()
         self.result_text.setStyleSheet("font-size: 30px;")
         self.result_text.setOpenExternalLinks(True)
         layout.addWidget(self.result_text)
 
-        # 將布局設置為中央窗口
+        # 設置布局
         container = QWidget()
         container.setLayout(layout)
         self.setCentralWidget(container)
